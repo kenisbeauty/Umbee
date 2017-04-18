@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address: MyString
+  price: 1
+  availability_from: 2017-04-18
+  availability_to: 2017-04-18
+  home_type: MyString
+  room_type: MyString
+  description: MyString
+  amenites: MyString
+  maximum_guest: MyString
+
+two:
+  name: MyString
+  address: MyString
+  price: 1
+  availability_from: 2017-04-18
+  availability_to: 2017-04-18
+  home_type: MyString
+  room_type: MyString
+  description: MyString
+  amenites: MyString
+  maximum_guest: MyString
