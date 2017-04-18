@@ -13,7 +13,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass', '3.3.6'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'fog'
+gem 'fog-aws'
 gem 'devise'
 
 
