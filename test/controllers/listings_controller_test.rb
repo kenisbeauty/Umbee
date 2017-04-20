@@ -17,7 +17,7 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create listing" do
     assert_difference('Listing.count') do
-      post listings_url, params: { listing: { address: @listing.address, amenites: @listing.amenites, availability_from: @listing.availability_from, availability_to: @listing.availability_to, description: @listing.description, home_type: @listing.home_type, maximum_guest: @listing.maximum_guest, name: @listing.name, price: @listing.price, room_type: @listing.room_type } }
+      post listings_url, params: { listing: { address: @listing.address, amenites: @listing.amenites, availability_from: @listing.availability_from, availability_to: @listing.availability_to, description: @listing.description, home_type: @listing.home_type, maximum_guest: @listing.maximum_guest, name: @listing.name, price: @listing.price, room_type: @listing.room_type, image: @listing.image } }
     end
 
     assert_redirected_to listing_url(Listing.last)
@@ -34,7 +34,7 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update listing" do
-    patch listing_url(@listing), params: { listing: { address: @listing.address, amenites: @listing.amenites, availability_from: @listing.availability_from, availability_to: @listing.availability_to, description: @listing.description, home_type: @listing.home_type, maximum_guest: @listing.maximum_guest, name: @listing.name, price: @listing.price, room_type: @listing.room_type } }
+    patch listing_url(@listing), params: { listing: { address: @listing.address, amenites: @listing.amenites, availability_from: @listing.availability_from, availability_to: @listing.availability_to, description: @listing.description, home_type: @listing.home_type, maximum_guest: @listing.maximum_guest, name: @listing.name, price: @listing.price, room_type: @listing.room_type, image: @listing.image } }
     assert_redirected_to listing_url(@listing)
   end
 

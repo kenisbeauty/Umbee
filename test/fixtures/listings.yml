@@ -11,6 +11,7 @@ one:
   description: MyString
   amenites: MyString
   maximum_guest: MyString
+  image: MyString
 
 two:
   name: MyString
@@ -23,3 +24,4 @@ two:
   description: MyString
   amenites: MyString
   maximum_guest: MyString
+  image: MyString
