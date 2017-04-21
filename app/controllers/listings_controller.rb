@@ -1,6 +1,8 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:create,:edit, :destroy]
+  before_action :check_user, only: [:edit, :update, :destroy]
+   
   # GET /listings
   # GET /listings.json
   def index
@@ -25,8 +27,7 @@ class ListingsController < ApplicationController
   # POST /listings.json
   def create
     @listing = Listing.new(listing_params)
-@listing.image = params[:file]
-
+    @listing.user_id = current_user.id
     respond_to do |format|
       if @listing.save
         format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
@@ -72,5 +73,11 @@ class ListingsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
       params.require(:listing).permit(:name, :address, :price, :availability_from, :availability_to, :home_type, :room_type, :description, :amenites, :maximum_guest, :image )
+    end
+    
+    def check_user
+      if current_user.id != @listing.user_id      #check the user logged in was the one who created the listing
+        redirect_to root_path, alert: "sorry you do not have permission"
+      end
     end
 end

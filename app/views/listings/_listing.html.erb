@@ -4,7 +4,7 @@
       <%= image_tag listing.image.url(:medium), :size=>"300x200" %>
     </div>
     <div class="caption">
-      <h2><%= link_to(listing.name, listing_path(listing)) %></h2>
+      <h2><%= link_to(listing.name, listing_path(listing)) %></h2>s
       <p><%=h listing.address %></p>
       <p><i class="icon icon-map-marker"></i> <%=h listing.place %></p>
     </div>
@@ -12,8 +12,8 @@
       <div class="row-fluid">
         <div class="span12">
           <b>
-            <%= l listing.availability_from, :format => :long %> - 
-            <%= l listing.availability_to, :format => :long%> 
+            <%= l listing.availability_from%> - 
+            <%= l listing.availability_to%> 
           </b><br/>
           <small>Availability</small>
         </div>

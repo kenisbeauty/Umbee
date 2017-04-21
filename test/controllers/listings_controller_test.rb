@@ -17,7 +17,7 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create listing" do
     assert_difference('Listing.count') do
-      post listings_url, params: { listing: { address: @listing.address, amenites: @listing.amenites, availability_from: @listing.availability_from, availability_to: @listing.availability_to, description: @listing.description, home_type: @listing.home_type, maximum_guest: @listing.maximum_guest, name: @listing.name, price: @listing.price, room_type: @listing.room_type, image: @listing.image } }
+      post listings_url, params: { listing: { address: '3, elfinstone road, aberdeen', amenites: 'iron', availability_from: '2017-04-20', availability_to:'2017-04-04', description:'the home is beautiful', home_type:'entire home', maximum_guest: '2 guest', name:'ocean wave', price: '$40', room_type:'apartment' , image: 'default.jpg' } }
     end
 
     assert_redirected_to listing_url(Listing.last)
@@ -34,7 +34,7 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update listing" do
-    patch listing_url(@listing), params: { listing: { address: @listing.address, amenites: @listing.amenites, availability_from: @listing.availability_from, availability_to: @listing.availability_to, description: @listing.description, home_type: @listing.home_type, maximum_guest: @listing.maximum_guest, name: @listing.name, price: @listing.price, room_type: @listing.room_type, image: @listing.image } }
+    patch listing_url(@listing), params: { listing: { address: '3, elfinstone road, aberdeen', amenites: 'iron', availability_from: '2017-04-20', availability_to:'2017-04-04', description:'the home is beautiful', home_type:'entire home', maximum_guest: '2 guest', name:'ocean wave', price: '$40', room_type:'apartment' , image: 'default.jpg' } }
     assert_redirected_to listing_url(@listing)
   end
 

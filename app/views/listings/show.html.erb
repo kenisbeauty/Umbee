@@ -1,55 +1,26 @@
+<div class="container">
+  <div class="col-md-3">
+    <%= image_tag(@listing.image_url) if @listing.image? %>
+     </div>
+  <div class="col-md-9">
+     <div class="thumbnail">
+    <h3><%= @listing.name %></h3>
+    <p><%= number_to_currency(@listing.price) %></p>
+    <p><%= @listing.address %></p>
+    <p><%= @listing.description %></p>
+    <p><%= @listing.home_type %></p>
+    <p><%= @listing.maximum_guest%></p>
+    <p> <%= @listing.availability_from %></p>
+    <p><%= @listing.availability_to%></p>
+    <p><%= @listing.room_type %></p>
+    <p><%= @listing.amenites %></p>
+</div>
+ 
+</div>
 
-<%= image_tag(@listing.image_url) if @listing.image? %>
+<%= link_to 'Edit', edit_listing_path(@listing), class:"btn btn-link" %> |
+<%= link_to 'Back', listings_path, class:"btn btn-link" %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @listing.name %>
-</p>
+</div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @listing.address %>
-</p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @listing.price %>
-</p>
-
-<p>
-  <strong>Availability from:</strong>
-  <%= @listing.availability_from %>
-</p>
-
-<p>
-  <strong>Availability to:</strong>
-  <%= @listing.availability_to %>
-</p>
-
-<p>
-  <strong>Home type:</strong>
-  <%= @listing.home_type %>
-</p>
-
-<p>
-  <strong>Room type:</strong>
-  <%= @listing.room_type %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @listing.description %>
-</p>
-
-<p>
-  <strong>Amenites:</strong>
-  <%= @listing.amenites %>
-</p>
-
-<p>
-  <strong>Maximum guest:</strong>
-  <%= @listing.maximum_guest %>
-</p>
-
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
-<%= link_to 'Back', listings_path %>
